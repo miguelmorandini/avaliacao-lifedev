@@ -19,7 +19,7 @@ const Home = () => {
   }
 
   return (
-    <>
+    <div className={styles.home}>
       <h1>Veja os posts mais recentes</h1>
       <form onSubmit={handleSubmit} className={styles.search_form}>
         <input
@@ -31,7 +31,7 @@ const Home = () => {
       </form>
       <div>
         {loading && <p>Carregando...</p>}
-        {posts && posts.map((post) => <PostDetail key={post.id} post={post}/> )}
+        {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
         {posts && posts.length === 0 && (
           <div className={styles.noposts}>
             <p>Não foram encontrados posts</p>
@@ -39,7 +39,7 @@ const Home = () => {
           </div>
         )}
       </div>
-    </>
+    </div>
   )
 }
 

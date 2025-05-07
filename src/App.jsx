@@ -9,6 +9,7 @@ import { AuthProvider } from './context/AuthContext'
 
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+
 import Home from './pages/Home/Home'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
@@ -17,7 +18,7 @@ import Dashboard from './pages/Dashboard/Dashboard'
 import About from './pages/About/About'
 import Search from './pages/Search/Search'
 import Post from './pages/Post/Post'
-
+import EditPost from './pages/EditPost/EditPost'
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
               <Route path='/posts/create' element={user ? <CreatePost /> : <Navigate to="/login" />} />
               <Route path='/dashboard' element={user ? <Dashboard /> : <Navigate to="/login" />} />
               <Route path='/posts/:id' element={<Post />} />
+              <Route path='/posts/edit/:id' element={user ? <EditPost /> : <Navigate to="/login" />} />
             </Routes>
           </div>
           <Footer />
