@@ -8,7 +8,14 @@ const Login = () => {
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")
 
-    const { login, error: authError, loading } = useAuthentication()
+    const { login, loginWithGoogle, error: authError, loading } = useAuthentication()
+
+    const handleGoogleLogin = async () => {
+        setError("")
+        const res = await loginWithGoogle()
+        console.log(res);
+
+    }
 
     const handlerSubmit = async (e) => {
         e.preventDefault()
@@ -61,6 +68,8 @@ const Login = () => {
                 {!loading && <button className='btn'>Entrar</button>}
                 {loading && <button className='btn' disabled>Aguarde... </button>}
                 {error && <p>{error}</p>}
+                <button type='button' className={styles.google_btn} onClick={handleGoogleLogin}><img src="/google-icon.png" alt="google" />Entrar com o Google</button>
+
             </form>
         </div>
     )

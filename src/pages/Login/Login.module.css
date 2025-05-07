@@ -5,3 +5,36 @@
   .login p {
     color: #aaa;
   }
+
+  .google_btn{
+    background-color: #fff;
+    color: black;
+    border: 1px solid #dddd;
+    padding: 10px 15px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 25px auto;
+  }
+
+  .google_btn img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+.btn {
+  background-color:  #18891b;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  width: 120px;
+  font-weight: bold;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1em;
+  margin: 0;
+  gap: 10px;
+}

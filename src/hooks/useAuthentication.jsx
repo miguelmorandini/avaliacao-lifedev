@@ -6,17 +6,20 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
   signOut,
+
+  GoogleAuthProvider,
+  signInWithPopup,
 } from 'firebase/auth'
+
 import { useState, useEffect } from "react"
 
 export const useAuthentication = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
-
-
   const [cancelled, setCancelled] = useState(false);
 
-  const auth = getAuth();
+  const auth = getAuth()
+  const provider = new GoogleAuthProvider
 
   function checkIfIsCancelled() {
     if (cancelled) {
@@ -102,6 +105,22 @@ export const useAuthentication = () => {
     console.log(error);
   };
 
+  const loginWithGoogle = async () => {
+    checkIfIsCancelled()
+    setLoading(true)
+    setError(false)
+
+    try {
+      const result = await signInWithPopup(auth, provider)
+      setLoading(false)
+      return result.user
+    } catch (error) {
+      console.log(error.message);
+      setError("Erro ao fazer login com o Google. Tente novamente mais tarde.")
+      setLoading(false)
+    }
+  }
+
   useEffect(() => {
     return () => setCancelled(true);
   }, []);
@@ -112,6 +131,7 @@ export const useAuthentication = () => {
     error,
     logout,
     login,
+    loginWithGoogle,
     loading,
   };
 };
