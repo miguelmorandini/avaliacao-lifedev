@@ -1,21 +1,19 @@
-import { initializeApp } from "firebase/app"
-import { getAnalytics } from "firebase/analytics"
-import { getFirestore } from "firebase/firestore"
-import { getAuth } from "firebase/auth"
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: "",
-    measurementId: ""
+    apiKey: "AIzaSyBUUucz21hBzOn_O2UNTgbbFUNbNsKJCh4",
+    authDomain: "avaliacaodw3-2d34e.firebaseapp.com",
+    projectId: "avaliacaodw3-2d34e",
+    storageBucket: "avaliacaodw3-2d34e.firebasestorage.app",
+    messagingSenderId: "390603576931",
+    appId: "1:390603576931:web:ff6b8c020ce8663114ca56"
 };
 
-const app = initializeApp(firebaseConfig)
-const analytics = getAnalytics(app)
-const db = getFirestore(app)
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 const auth = getAuth(app)
+const provider = new GoogleAuthProvider()
 
-export { db, auth }
+export { db, auth, provider }

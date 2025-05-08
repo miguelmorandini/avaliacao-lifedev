@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './Footer.module.css'
 
 const Footer = () => {
@@ -6,8 +5,8 @@ const Footer = () => {
     <>
     <footer className={styles.footer}>
         <h3>Plataforma de Postagens para Desenvolvedores</h3>
-        <p>Compartilhamento de experiências de Nomade Life Dev</p>
-        <p> Icoma Education&#174; 2025&#169;</p>
+        <p>Compartilhamento de experiências de Desenvolvedores ao redor do Mundo!</p>
+        <p>Life<strong>Dev</strong> 2025 &#174; by Miguel Morandini</p>
     </footer>
     </>
   )
