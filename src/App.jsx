@@ -19,6 +19,7 @@ import About from './pages/About/About'
 import Search from './pages/Search/Search'
 import Post from './pages/Post/Post'
 import EditPost from './pages/EditPost/EditPost'
+import PrivateRoute from './route/PrivateRoute'
 
 
 function App() {
@@ -49,12 +50,13 @@ function App() {
               <Route path='/about' element={<About />} />
               <Route path='/search' element={<Search />} />
               <Route path='posts/:id' element={<Post />} />
+
               <Route path='/login' element={!user ? <Login /> : <Navigate to="/" />} />
               <Route path='/register' element={!user ? <Register /> : <Navigate to="/" />} />
-              <Route path='/posts/create' element={user ? <CreatePost /> : <Navigate to="/login" />} />
-              <Route path='/dashboard' element={user ? <Dashboard /> : <Navigate to="/login" />} />
-              <Route path='/posts/:id' element={<Post />} />
-              <Route path='/posts/edit/:id' element={user ? <EditPost /> : <Navigate to="/login" />} />
+
+              <Route path='/posts/create' element={<PrivateRoute> <CreatePost /> </PrivateRoute>} />
+              <Route path='/dashboard' element={<PrivateRoute> <Dashboard /> </PrivateRoute>} />
+              <Route path='/posts/edit/:id' element={<PrivateRoute> <EditPost /> </PrivateRoute>} />
             </Routes>
           </div>
           <Footer />
