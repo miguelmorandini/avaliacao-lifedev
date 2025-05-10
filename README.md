@@ -11,7 +11,7 @@ Inspirando-se na estrutura de:
 > 🔗 [Exemplo Estruturado - dw3_react_minidevblog](https://github.com/victoricoma/dw3_react_minidevblog)
 
 ---
-Reultado final:
+Resultado final:
 
 > 🔗 [Repostório de Entrega](https://github.com/miguelmorandini/avaliacao-lifedev)
 
