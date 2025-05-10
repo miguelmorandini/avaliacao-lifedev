@@ -13,7 +13,7 @@ Inspirando-se na estrutura de:
 ---
 Resultado final:
 
-> 🔗 [Repostório de Entrega](https://github.com/miguelmorandini/avaliacao-lifedev)
+> 🔗 [Repositório de Entrega](https://github.com/miguelmorandini/avaliacao-lifedev)
 
 > 🔗 [LifeDev por Miguel Morandini](https://avaliacaodw3-2d34e.web.app)
 
