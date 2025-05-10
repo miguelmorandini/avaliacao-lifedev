@@ -2,11 +2,8 @@ name: Deploy to Firebase Hosting
 on:
   push:
     branches:
-      - "avaliacao-miguelmorandini"
-  pull_request:
-    branches:
-      - "avaliacao-miguelmorandini"
-
+      - main
+      
 jobs:
     build:
         runs-on: ubuntu-latest
