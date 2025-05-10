@@ -11,9 +11,9 @@ Inspirando-se na estrutura de:
 > 🔗 [Exemplo Estruturado - dw3_react_minidevblog](https://github.com/victoricoma/dw3_react_minidevblog)
 
 ---
-Reultado final:
+Resultado final:
 
-> 🔗 [Repostório de Entrega](https://github.com/miguelmorandini/avaliacao-lifedev)
+> 🔗 [Repositório de Entrega](https://github.com/miguelmorandini/avaliacao-lifedev)
 
 > 🔗 [LifeDev por Miguel Morandini](https://avaliacaodw3-2d34e.web.app)
 
@@ -83,9 +83,7 @@ Implementação das seguintes **rotas** usando `react-router-dom`:
 
 ### 8. Configuração de Pipeline e Deploy
 
-- Configure o deploy automático usando **GitHub Actions** ou plataformas como **Vercel**, **Netlify** ou **Firebase Hosting**:
-  - Após o push para a branch de entrega, o sistema deve ser publicado automaticamente.
-  - Deve ser possível acessar o sistema por link público.
+![image](https://github.com/user-attachments/assets/0a906ab2-12ce-4ad9-b19a-99185ae63554)
 
 ---
 
@@ -96,5 +94,7 @@ Implementação das seguintes **rotas** usando `react-router-dom`:
 2. 🔗 [Link do Deploy Funcionando - **LifeDev**](https://github.com/miguelmorandini/avaliacao-lifedev/tree/avaliacaodw-miguelmorandini)
 
 3. **Pipeline CodeQL** rodando no GitHub Actions
+   🔗 [Pipeline **CodeQL**](https://github.com/miguelmorandini/avaliacao-lifedev/actions/runs/14941358286)
+  ![image](https://github.com/user-attachments/assets/e68af44d-5346-4601-a34e-8c9c1485e216)
 
 ---
