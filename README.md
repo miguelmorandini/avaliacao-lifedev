@@ -65,7 +65,7 @@ Implementação das seguintes **rotas** usando `react-router-dom`:
   - `/post/:id`
   - `/post/new`
 
-- Ou seja, usuários **não logados** são redirecionados para a tela de **Login**.
+- Ou seja, usuários **não logados** são redirecionados diretamente para a tela de **Login**.
 
 ---
 
