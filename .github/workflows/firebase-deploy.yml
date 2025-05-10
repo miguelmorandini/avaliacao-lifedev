@@ -2,7 +2,10 @@ name: Deploy to Firebase Hosting
 on:
   push:
     branches:
-      - main
+      - "avaliacao-miguelmorandini"
+  pull_request:
+    branches:
+      - "avaliacao-miguelmorandini"
 
 jobs:
     build:

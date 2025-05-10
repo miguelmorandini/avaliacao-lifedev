@@ -1,10 +1,8 @@
-# 📚 Avaliação DW3 - MiniDevBlog React + Firebase + Deploy [Nunca se Esqueça de Montar a Build Final do Deploy]
+# 📚 Avaliação DW3 - MiniDevBlog React + Firebase + Deploy (por Miguel Morandini)
 
-## 🏛️ Contextualização
-
-"Nos bons tempos", o desenvolvedor que sabia organizar rotas, proteger páginas e ainda subir uma aplicação pública era considerado digno da espada de um verdadeiro arquiteto de sistemas. Hoje, você terá essa oportunidade.
-
-Você irá concluir a construção de um **Mini DevBlog** utilizando **React**, **Firebase Authentication** e **Deploy Automatizado**, tomando como base:
+## 🏛️ Atividade
+Este projeto se trata da entrega da Avaliação 1 de Desenvolviemto Web III. O **LifeDev** é um blog para o compartilhamento de experiências, através de posts, de programadores.
+Desenvolvido utilizando **React**, **Firebase Authentication** e **Deploy Automatizado**, tomando como base:
 
 > 🔗 [Repositório Inicial (Incompleto) - avalicao-lifedev](https://github.com/victoricoma/avaliacao-lifedev.git)
 
@@ -13,24 +11,28 @@ Inspirando-se na estrutura de:
 > 🔗 [Exemplo Estruturado - dw3_react_minidevblog](https://github.com/victoricoma/dw3_react_minidevblog)
 
 ---
+Reultado final:
 
-## 🛠️ Tarefas a serem realizadas
+> 🔗 [Repostório de Entrega](https://github.com/miguelmorandini/avaliacao-lifedev)
+
+> 🔗 [LifeDev por Miguel Morandini](https://avaliacaodw3-2d34e.web.app)
+
+## 🛠️ Tarefas Concluídas
 
 ### 1. Preparação do Ambiente
 
-- Faça o **fork** do repositório de avaliação.
-- Crie uma **branch** chamada:  
-  `avaliacaodw-seulogindogithub`
-- Exemplo: `avaliacaodw-joaosilva`
+- **Fork** do repositório de avaliação.
+- Criação da **branch**:  
+  `avaliacaodw-miguelmorandini`
 
 ---
 
 ### 2. Construção de Rotas Principais
 
-Implemente as seguintes **rotas** usando `react-router-dom`:
+Implementação das seguintes **rotas** usando `react-router-dom`:
 
 | Rota | Função | Proteção |
-|:----|:------|:------|
+|:-----|:-------|:---------|
 | `/login` | Página de login | Acesso público |
 | `/dashboard` | Listagem de posts | Acesso protegido (usuário logado) |
 | `/post/:id` | Visualização individual de post | Acesso protegido |
@@ -40,59 +42,42 @@ Implemente as seguintes **rotas** usando `react-router-dom`:
 
 ### 3. Construção da Dashboard
 
-- Crie uma página `Dashboard.jsx`:
-  - Liste **todos os posts** em cards ou em lista.
-  - Cada card deve ter:
-    - Título do post
-    - Autor (se possível)
-    - Link para visualizar o post completo (`/post/:id`).
-
-- Utilize **Hooks** para buscar os dados:
-  - `useEffect` para puxar os posts ao carregar a página.
-  - `useState` para armazenar a lista de posts.
+![image](https://github.com/user-attachments/assets/50946f3a-fca8-499b-aac7-70df1f19db77)
 
 ---
 
 ### 4. Construção da Página de Criação de Postagem
 
-- Crie uma página `CreatePost.jsx`:
-  - Formulário com campos para:
-    - Título
-    - Conteúdo
-  - Botão **Salvar**.
-  - Ao enviar, crie o novo post no **Firebase** ou no contexto/local que esteja usando para simulação.
-
-- Dica prática:
-  - Use `useState` para controlar os campos do formulário.
-  - Use `useContext` ou chamadas diretas para atualizar a lista de posts ao salvar.
+![image](https://github.com/user-attachments/assets/186382cb-9f15-455c-b333-9a08257ba248)
 
 ---
 
 ### 5. Sistema de Login (Firebase OAuth)
 
-- Implemente o **login via Firebase Authentication**.
-- Métodos obrigatórios:
-  - Login com **Google** (padrão).
-- Mantenha conexão com o Firebase durante a sessão do usuário.
+![image](https://github.com/user-attachments/assets/79dedba3-3051-4c21-8a96-ee1c5487fab3)
 
 ---
 
 ### 6. Controle de Acesso (Proteção de Rotas)
 
-- Utilize um `PrivateRoute` (ou configuração equivalente) para proteger:
+- Utilizando o `PrivateRoute` para proteger as páginas:
   - `/dashboard`
   - `/post/:id`
   - `/post/new`
 
-- Usuário **não logado** deve ser redirecionado para `/login`.
+- Ou seja, usuários **não logados** são redirecionados diretamente para a tela de **Login**.
 
 ---
 
 ### 7. Menu de Navegação Condicional
 
-- Ajuste o menu para:
-  - Exibir apenas **Login** quando o usuário não estiver autenticado.
-  - Exibir **Dashboard**, **Novo Post**, **Logout** quando estiver logado.
+- Quando o usuário **não estiver logado** são exibidas, no menu, apenas as telas de **Entrar** e **Cadastrar**:
+- 
+  ![image](https://github.com/user-attachments/assets/46e54762-ecf8-41f1-b9be-aac61676218b)
+
+- Já se o usuário estiver **logado corretamente**, são exibidas as telas de **Dashboard**, **Novo Post**, **Logout**:
+- 
+  ![image](https://github.com/user-attachments/assets/a992b46c-9427-4304-ad57-b21cf1f55697)
 
 ---
 
@@ -104,62 +89,12 @@ Implemente as seguintes **rotas** usando `react-router-dom`:
 
 ---
 
-## ⚙️ Dicas Técnicas para os Hooks
-
-- **useState**:
-  ```javascript
-  const [posts, setPosts] = useState([]);
-  ```
-
-- **useEffect** para buscar posts:
-  ```javascript
-  useEffect(() => {
-    // Função para buscar posts aqui
-  }, []);
-  ```
-
-- **useContext** para controle global de autenticação:
-  - Criar um `AuthContext`.
-  - Fornecer informações de login para todo o app.
-
-- **Redirecionamento Condicional**:
-  ```javascript
-  if (!user) {
-    return <Navigate to="/login" />;
-  }
-  ```
-
-- **Proteção de Rotas** usando `Outlet`:
-  ```javascript
-  const PrivateRoute = () => {
-    return user ? <Outlet /> : <Navigate to="/login" />;
-  }
-  ```
-
----
-
 ## 📌 Entrega
 
-Você deve entregar:
+1. 🔗 [Link da Branch de Entrega - miguelmorandini](https://github.com/miguelmorandini/avaliacao-lifedev/tree/avaliacaodw-miguelmorandini)
 
-1. **Link da Branch** `avaliacaodw-seulogindogithub`
-2. **Link do Deploy Funcionando** para teste público
+2. 🔗 [Link do Deploy Funcionando - **LifeDev**](https://github.com/miguelmorandini/avaliacao-lifedev/tree/avaliacaodw-miguelmorandini)
+
 3. **Pipeline CodeQL** rodando no GitHub Actions
 
 ---
-
-## 📅 Avaliação
-
-Serão avaliados:
-
-- Organização e Estrutura do Código
-- Funcionamento das Rotas e Autenticação
-- Funcionalidade da Dashboard e Criação de Postagem
-- Deploy público funcional
-- Qualidade geral do repositório e uso correto de boas práticas
-
----
-
-# 🚀 Bons estudos e boa sorte!  
-*"O código que você escreve hoje é a carta que você envia para o seu eu do futuro. Capriche."* 📜🚀
-
